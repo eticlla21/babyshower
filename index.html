@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Shower - Adrián Matías</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .font-quicksand {
+      font-family: 'Quicksand', sans-serif;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    
+    @keyframes gentle-sway {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+    
+    @keyframes balloon-float {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-8px) rotate(5deg); }
+    }
+    
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .animate-twinkle {
+      animation: twinkle 2s ease-in-out infinite;
+    }
+    
+    .animate-sway {
+      animation: gentle-sway 3s ease-in-out infinite;
+    }
+    
+    .animate-balloon {
+      animation: balloon-float 3s ease-in-out infinite;
+    }
+    
+    .gold-border {
+      border: 3px solid #D4AF37;
+      box-shadow: inset 0 0 0 2px #FFF8DC, 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      filter: blur(1px);
+    }
+    
+    .star {
+      position: absolute;
+      color: #FFE4A0;
+      font-size: 12px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-quicksand">
+  <div id="invitation-wrapper" class="h-full w-full overflow-auto flex items-center justify-center p-4" style="background: linear-gradient(180deg, #B8D4E8 0%, #D6E8F5 50%, #E8F4FC 100%);"><!-- Floating clouds -->
+   <div class="cloud animate-float" style="width: 80px; height: 40px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+   <div class="cloud animate-float" style="width: 100px; height: 50px; top: 15%; right: 10%; animation-delay: 1s;"></div>
+   <div class="cloud animate-float" style="width: 60px; height: 30px; top: 25%; left: 15%; animation-delay: 2s;"></div>
+   <div class="cloud animate-float" style="width: 90px; height: 45px; bottom: 20%; right: 5%; animation-delay: 0.5s;"></div>
+   <div class="cloud animate-float" style="width: 70px; height: 35px; bottom: 30%; left: 8%; animation-delay: 1.5s;"></div><!-- Main invitation card -->
+   <div class="gold-border rounded-3xl w-full max-w-lg mx-auto relative overflow-hidden" style="background: linear-gradient(180deg, #FFFEF9 0%, #FFF9E6 100%);"><!-- Decorative stars -->
+    <div class="star animate-twinkle" style="top: 8%; left: 10%; animation-delay: 0s;">
+     ✦
+    </div>
+    <div class="star animate-twinkle" style="top: 12%; right: 15%; animation-delay: 0.5s;">
+     ✧
+    </div>
+    <div class="star animate-twinkle" style="top: 20%; left: 20%; animation-delay: 1s;">
+     ✦
+    </div>
+    <div class="star animate-twinkle" style="top: 15%; right: 25%; animation-delay: 1.5s;">
+     ✧
+    </div>
+    <div class="star animate-twinkle" style="bottom: 35%; left: 8%; animation-delay: 0.3s;">
+     ✦
+    </div>
+    <div class="star animate-twinkle" style="bottom: 40%; right: 10%; animation-delay: 0.8s;">
+     ✧
+    </div><!-- Corner teddy bear icon -->
+    <div class="absolute top-4 left-4 opacity-60">
+     <svg width="35" height="35" viewbox="0 0 50 50" fill="none"><circle cx="12" cy="12" r="8" fill="#C4A484" /> <circle cx="38" cy="12" r="8" fill="#C4A484" /> <ellipse cx="25" cy="28" rx="18" ry="16" fill="#D4B896" /> <ellipse cx="25" cy="32" rx="12" ry="10" fill="#E8D4B8" /> <circle cx="18" cy="26" r="3" fill="#4A3728" /> <circle cx="32" cy="26" r="3" fill="#4A3728" /> <ellipse cx="25" cy="32" rx="4" ry="3" fill="#8B7355" /> <circle cx="19" cy="25" r="1" fill="#FFF" /> <circle cx="33" cy="25" r="1" fill="#FFF" />
+     </svg>
+    </div>
+    <div class="px-6 py-8 sm:px-10 sm:py-10 text-center relative"><!-- Top decorative element -->
+     <div class="flex justify-center mb-3">
+      <div class="flex items-center gap-2">
+       <div class="h-px w-12 bg-gradient-to-r from-transparent to-amber-300"></div><span class="text-amber-400 text-lg">✦</span>
+       <div class="h-px w-12 bg-gradient-to-l from-transparent to-amber-300"></div>
+      </div>
+     </div><!-- Main teddy bear illustration -->
+     <div class="relative w-40 h-40 mx-auto mb-4 animate-sway">
+      <svg viewbox="0 0 200 200" class="w-full h-full"><!-- Balloon string --> <path d="M100 45 Q95 60 100 80" stroke="#FFB6C1" stroke-width="2" fill="none" /> <!-- Balloon --> <g class="animate-balloon" style="transform-origin: 100px 30px;">
+        <ellipse cx="100" cy="25" rx="25" ry="30" fill="#FFD700" />
+        <ellipse cx="100" cy="25" rx="25" ry="30" fill="url(#balloonShine)" />
+        <path d="M95 53 L100 60 L105 53" fill="#FFD700" />
+        <ellipse cx="92" cy="18" rx="6" ry="8" fill="rgba(255,255,255,0.4)" />
+       </g> <!-- Left ear --> <circle cx="60" cy="85" r="22" fill="#C4A484" /> <circle cx="60" cy="85" r="14" fill="#E8D4B8" /> <!-- Right ear --> <circle cx="140" cy="85" r="22" fill="#C4A484" /> <circle cx="140" cy="85" r="14" fill="#E8D4B8" /> <!-- Head --> <ellipse cx="100" cy="110" rx="50" ry="45" fill="#D4B896" /> <!-- Face patch --> <ellipse cx="100" cy="120" rx="30" ry="25" fill="#E8D4B8" /> <!-- Eyes --> <ellipse cx="82" cy="105" rx="8" ry="10" fill="#4A3728" /> <ellipse cx="118" cy="105" rx="8" ry="10" fill="#4A3728" /> <circle cx="84" cy="102" r="3" fill="#FFF" /> <circle cx="120" cy="102" r="3" fill="#FFF" /> <!-- Nose --> <ellipse cx="100" cy="122" rx="10" ry="7" fill="#8B7355" /> <ellipse cx="98" cy="120" rx="3" ry="2" fill="rgba(255,255,255,0.3)" /> <!-- Mouth --> <path d="M92 132 Q100 140 108 132" stroke="#6B5344" stroke-width="2" fill="none" stroke-linecap="round" /> <!-- Blush --> <ellipse cx="70" cy="118" rx="8" ry="5" fill="rgba(255,182,193,0.5)" /> <ellipse cx="130" cy="118" rx="8" ry="5" fill="rgba(255,182,193,0.5)" /> <!-- Body --> <ellipse cx="100" cy="175" rx="40" ry="30" fill="#D4B896" /> <!-- Belly patch --> <ellipse cx="100" cy="175" rx="25" ry="20" fill="#E8D4B8" /> <!-- Bow tie --> <path d="M80 155 L100 162 L120 155 L100 168 Z" fill="#87CEEB" /> <circle cx="100" cy="162" r="5" fill="#5BA3C6" /> <!-- Arms --> <ellipse cx="55" cy="165" rx="15" ry="22" fill="#D4B896" transform="rotate(-20 55 165)" /> <ellipse cx="145" cy="165" rx="15" ry="22" fill="#D4B896" transform="rotate(20 145 165)" /> <!-- Paw pads --> <ellipse cx="52" cy="178" rx="6" ry="5" fill="#E8D4B8" /> <ellipse cx="148" cy="178" rx="6" ry="5" fill="#E8D4B8" /> <!-- Gradient definitions --> <defs>
+        <radialgradient id="balloonShine" cx="30%" cy="30%">
+         <stop offset="0%" stop-color="rgba(255,255,255,0.6)" />
+         <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+        </radialgradient>
+       </defs>
+      </svg>
+     </div><!-- Main title -->
+     <h1 id="main-title" class="font-playfair text-xl sm:text-2xl font-bold mb-1 leading-tight" style="color: #5BA3C6;">¡Te esperamos en el Baby Shower de</h1>
+     <h2 id="baby-name" class="font-playfair text-xl sm:text-2xl font-bold mb-4 leading-tight" style="color: #D4AF37;">Adrián Matías!</h2><!-- Decorative divider -->
+     <div class="flex justify-center items-center gap-2 mb-4">
+      <div class="h-px w-12 bg-gradient-to-r from-transparent via-amber-300 to-transparent"></div><span style="color: #87CEEB;">🍼</span>
+      <div class="h-px w-12 bg-gradient-to-r from-transparent via-amber-300 to-transparent"></div>
+     </div><!-- Countdown Timer -->
+     <div class="mb-6 p-3 rounded-lg" style="background: rgba(184, 212, 232, 0.4); border: 2px solid #87CEEB;">
+      <p class="font-playfair text-xs font-semibold mb-2" style="color: #5BA3C6;">⏰ Faltan:</p>
+      <div class="flex justify-center gap-3">
+       <div class="text-center">
+        <p id="days" class="font-playfair text-lg font-bold" style="color: #D4AF37;">00</p>
+        <p class="text-xs font-semibold" style="color: #5BA3C6;">Días</p>
+       </div>
+       <p class="text-lg font-bold" style="color: #D4AF37;">:</p>
+       <div class="text-center">
+        <p id="hours" class="font-playfair text-lg font-bold" style="color: #D4AF37;">00</p>
+        <p class="text-xs font-semibold" style="color: #5BA3C6;">Horas</p>
+       </div>
+       <p class="text-lg font-bold" style="color: #D4AF37;">:</p>
+       <div class="text-center">
+        <p id="minutes" class="font-playfair text-lg font-bold" style="color: #D4AF37;">00</p>
+        <p class="text-xs font-semibold" style="color: #5BA3C6;">Minutos</p>
+       </div>
+      </div>
+     </div><!-- Event details -->
+     <div class="space-y-3 mb-6">
+      <div class="flex items-center justify-center gap-2"><span class="text-lg" style="color: #FFD700;">📅</span>
+       <p id="event-date" class="text-sm sm:text-base font-semibold" style="color: #6B5B4F;">21 de enero de 2026, 7:00 PM</p>
+      </div>
+      <div class="flex items-center justify-center gap-2"><span class="text-lg" style="color: #FFD700;">📍</span>
+       <p id="event-location" class="text-xs sm:text-sm" style="color: #6B5B4F;">Jr. Huaraz N° 2030, Pueblo Libre</p>
+      </div>
+     </div><!-- Action Buttons -->
+     <div class="flex flex-col sm:flex-row gap-2 mb-6 justify-center"><a href="https://maps.app.goo.gl/F9kqaiixx1LzxTBd8" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg font-semibold text-white text-sm transition hover:scale-105" style="background: linear-gradient(135deg, #87CEEB 0%, #5BA3C6 100%);"> 📍 Ver Ubicación </a> <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Babyshower+de+Adrián&amp;dates=20260121T120000Z/20260121T140000Z&amp;details=&amp;location=Jirón+Huaraz+2030,+Pueblo+Libre" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg font-semibold text-white text-sm transition hover:scale-105" style="background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);"> 📅 Agregar Calendario </a>
+     </div><!-- Confirmation Button -->
+     <div class="mb-6 p-3 rounded-lg text-center" style="background: linear-gradient(135deg, rgba(255, 182, 193, 0.4) 0%, rgba(255, 212, 191, 0.4) 100%); border: 2px solid #FFB6C1;">
+      <p class="text-xs font-semibold mb-2" style="color: #5BA3C6;">⏰ Confirmación hasta el domingo 11 de enero</p><button id="confirm-btn" class="w-full px-6 py-2 rounded-lg font-bold text-white text-sm transition hover:scale-105" style="background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);"> 🎉 Confirmar Mi Participación </button>
+     </div><!-- Decorative elements -->
+     <div class="flex justify-center gap-3"><span class="text-xl animate-float" style="animation-delay: 0s;">🧸</span> <span class="text-xl animate-float" style="animation-delay: 0.3s;">⭐</span> <span class="text-xl animate-float" style="animation-delay: 0.6s;">🎀</span> <span class="text-xl animate-float" style="animation-delay: 0.9s;">⭐</span> <span class="text-xl animate-float" style="animation-delay: 1.2s;">🧸</span>
+     </div><!-- Bottom banner -->
+     <div class="relative mt-6">
+      <div class="py-3 px-4 rounded-xl relative overflow-hidden" style="background: linear-gradient(90deg, #B8D4E8 0%, #D6E8F5 50%, #B8D4E8 100%);"><!-- Banner decoration -->
+       <div class="absolute left-0 top-0 bottom-0 w-3" style="background: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);"></div>
+       <div class="absolute right-0 top-0 bottom-0 w-3" style="background: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);"></div>
+       <p id="footer-message" class="font-playfair text-xs sm:text-sm italic font-semibold px-3" style="color: #5BA3C6;">"Celebramos la llegada de nuestro pequeño tesoro."</p>
+      </div>
+     </div>
+    </div>
+   </div><!-- Modal de Confirmación -->
+   <div id="confirmation-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" style="display: none;">
+    <div class="gold-border rounded-3xl w-full max-w-md mx-auto relative overflow-hidden" style="background: linear-gradient(180deg, #FFFEF9 0%, #FFF9E6 100%); animation: slideUp 0.3s ease-out;"><!-- Close button --> <button id="close-modal" class="absolute top-4 right-4 text-2xl font-bold transition hover:scale-110" style="color: #D4AF37;">✕</button>
+     <div class="px-6 py-8 sm:px-10 sm:py-10"><!-- Header -->
+      <div class="text-center mb-6">
+       <h2 class="font-playfair text-xl font-bold mb-2" style="color: #5BA3C6;">¡Queremos contar contigo!</h2>
+       <p class="text-xs" style="color: #6B5B4F;">Completa tus datos para confirmar tu asistencia</p>
+      </div><!-- Form -->
+      <form id="confirmation-form" class="space-y-4"><!-- Nombre completo -->
+       <div><label for="full-name" class="block text-xs font-semibold mb-2" style="color: #5BA3C6;"> Nombres Completos * </label> <input type="text" id="full-name" name="full_name" placeholder="Ingresa tu nombre completo" required class="w-full px-4 py-2 rounded-lg border-2 focus:outline-none transition text-sm" style="border-color: #87CEEB; color: #6B5B4F;">
+        <p class="text-xs mt-2" style="color: #FF69B4;">💡 Si asisten más personas, vuelve a llenar el formulario con cada nombre</p>
+       </div><!-- Sugerencias box -->
+       <div class="p-3 rounded-lg" style="background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(255, 212, 191, 0.3) 100%); border: 2px dashed #FFB6C1;">
+        <p class="font-playfair text-xs font-bold mb-2" style="color: #D4AF37;">✨ Sugerencias:</p>
+        <div class="space-y-1 text-left">
+         <div class="flex items-start gap-2"><span class="text-sm flex-shrink-0">😄</span>
+          <p class="text-xs" style="color: #6B5B4F;">Lleva toda la actitud para divertirte</p>
+         </div>
+         <div class="flex items-start gap-2"><span class="text-sm flex-shrink-0">⏰</span>
+          <p class="text-xs" style="color: #6B5B4F;">Te sugerimos llegar 10 minutos antes</p>
+         </div>
+        </div>
+       </div><!-- Botones -->
+       <div class="flex gap-3 pt-2"><button type="button" id="cancel-btn" class="flex-1 px-4 py-2 rounded-lg font-semibold text-white text-sm transition hover:scale-105" style="background: linear-gradient(135deg, #B0C4DE 0%, #87CEEB 100%);"> Cancelar </button> <button type="submit" id="submit-btn" class="flex-1 px-4 py-2 rounded-lg font-semibold text-white text-sm transition hover:scale-105" style="background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);"> ✓ Confirmar </button>
+       </div><!-- Loading state -->
+       <div id="loading-message" class="hidden text-center text-xs font-semibold" style="color: #5BA3C6;">
+        Enviando confirmación...
+       </div><!-- Success message -->
+       <div id="success-message" class="hidden text-center space-y-3">
+        <div class="p-3 rounded-lg" style="background: rgba(144, 238, 144, 0.3); color: #228B22; font-semibold; font-size: 12px;">
+         ✓ ¡Gracias por confirmar! Nos vemos en el baby shower 🎉
+        </div><button type="button" id="add-another-btn" class="w-full px-4 py-2 rounded-lg font-semibold text-white text-sm transition hover:scale-105" style="background: linear-gradient(135deg, #87CEEB 0%, #5BA3C6 100%);"> ➕ Seguir agregando </button>
+       </div><!-- Error message -->
+       <div id="error-message" class="hidden text-center p-3 rounded-lg text-xs font-semibold" style="background: rgba(255, 69, 69, 0.3); color: #DC143C;"></div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <style>
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    const defaultConfig = {
+      baby_name: "Adrián Matías!",
+      event_date: "21 de enero de 2026, 7:00 PM",
+      event_location: "Jr. Huaraz N° 2030, Pueblo Libre",
+      footer_message: '"Celebramos la llegada de nuestro pequeño tesoro."',
+      background_color: "#B8D4E8",
+      card_background: "#FFFEF9",
+      title_color: "#5BA3C6",
+      accent_color: "#D4AF37",
+      text_color: "#6B5B4F",
+      font_family: "Quicksand",
+      font_size: 16
+    };
+
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+      
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = 'Quicksand, sans-serif';
+      const playfairStack = 'Playfair Display, serif';
+      
+      // Update background
+      const wrapper = document.getElementById('invitation-wrapper');
+      if (wrapper) {
+        wrapper.style.background = `linear-gradient(180deg, ${config.background_color} 0%, ${adjustColor(config.background_color, 20)} 50%, ${adjustColor(config.background_color, 40)} 100%)`;
+      }
+      
+      // Update baby name
+      const babyNameEl = document.getElementById('baby-name');
+      if (babyNameEl) {
+        babyNameEl.textContent = config.baby_name;
+        babyNameEl.style.color = config.accent_color;
+        babyNameEl.style.fontFamily = `${customFont}, ${playfairStack}`;
+        babyNameEl.style.fontSize = `${baseSize * 1.375}px`;
+      }
+      
+      // Update main title
+      const mainTitle = document.getElementById('main-title');
+      if (mainTitle) {
+        mainTitle.style.color = config.title_color;
+        mainTitle.style.fontFamily = `${customFont}, ${playfairStack}`;
+        mainTitle.style.fontSize = `${baseSize * 1.375}px`;
+      }
+      
+      // Update event date
+      const eventDateEl = document.getElementById('event-date');
+      if (eventDateEl) {
+        eventDateEl.textContent = config.event_date;
+        eventDateEl.style.color = config.text_color;
+        eventDateEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
+        eventDateEl.style.fontSize = `${baseSize * 0.875}px`;
+      }
+      
+      // Update event location
+      const eventLocationEl = document.getElementById('event-location');
+      if (eventLocationEl) {
+        eventLocationEl.textContent = config.event_location;
+        eventLocationEl.style.color = config.text_color;
+        eventLocationEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
+        eventLocationEl.style.fontSize = `${baseSize * 0.75}px`;
+      }
+      
+      // Update footer message
+      const footerEl = document.getElementById('footer-message');
+      if (footerEl) {
+        footerEl.textContent = config.footer_message;
+        footerEl.style.color = config.title_color;
+        footerEl.style.fontFamily = `${customFont}, ${playfairStack}`;
+        footerEl.style.fontSize = `${baseSize * 0.875}px`;
+      }
+    }
+
+    function adjustColor(hex, percent) {
+      const num = parseInt(hex.replace('#', ''), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = Math.min(255, (num >> 16) + amt);
+      const G = Math.min(255, ((num >> 8) & 0x00FF) + amt);
+      const B = Math.min(255, (num & 0x0000FF) + amt);
+      return `#${(0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1)}`;
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => { cfg.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => cfg.card_background || defaultConfig.card_background,
+            set: (value) => { cfg.card_background = value; window.elementSdk.setConfig({ card_background: value }); }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => { cfg.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => cfg.title_color || defaultConfig.title_color,
+            set: (value) => { cfg.title_color = value; window.elementSdk.setConfig({ title_color: value }); }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => { cfg.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => { cfg.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || defaultConfig.font_size,
+          set: (value) => { cfg.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ["baby_name", cfg.baby_name || defaultConfig.baby_name],
+        ["event_date", cfg.event_date || defaultConfig.event_date],
+        ["event_location", cfg.event_location || defaultConfig.event_location],
+        ["footer_message", cfg.footer_message || defaultConfig.footer_message]
+      ]);
+    }
+
+    // Countdown Timer
+    function updateCountdown() {
+      const eventDate = new Date('2026-01-21T19:00:00').getTime();
+      const now = new Date().getTime();
+      const difference = eventDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+
+    // Confirmation Form Logic
+    const confirmBtn = document.getElementById('confirm-btn');
+    const modal = document.getElementById('confirmation-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const form = document.getElementById('confirmation-form');
+    const fullNameInput = document.getElementById('full-name');
+    const submitBtn = document.getElementById('submit-btn');
+    const loadingMessage = document.getElementById('loading-message');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    const addAnotherBtn = document.getElementById('add-another-btn');
+
+    // Open modal
+    confirmBtn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      fullNameInput.focus();
+    });
+
+    // Close modal
+    function closeModal() {
+      modal.style.display = 'none';
+      form.reset();
+      loadingMessage.classList.add('hidden');
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+      submitBtn.disabled = false;
+    }
+
+    closeModalBtn.addEventListener('click', closeModal);
+    cancelBtn.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Add another person
+    addAnotherBtn.addEventListener('click', () => {
+      form.reset();
+      loadingMessage.classList.add('hidden');
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+      submitBtn.disabled = false;
+      fullNameInput.focus();
+    });
+
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fullName = fullNameInput.value.trim();
+
+      if (!fullName) {
+        errorMessage.textContent = 'Por favor ingresa tu nombre completo';
+        errorMessage.classList.remove('hidden');
+        return;
+      }
+
+      // Show loading state
+      submitBtn.disabled = true;
+      loadingMessage.classList.remove('hidden');
+      errorMessage.classList.add('hidden');
+
+      try {
+        // Send data to Google Apps Script
+        const response = await fetch('https://script.google.com/macros/s/AKfycbzYHa_Eh35m4CBtFELuQvxWdAdi7_Jkczf-HWmKtJX63CT-nMngMRE4nSKozviW6SCjBg/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: `full_name=${encodeURIComponent(fullName)}`
+        });
+
+        // Show success message
+        loadingMessage.classList.add('hidden');
+        successMessage.classList.remove('hidden');
+
+      } catch (error) {
+        console.error('Error:', error);
+        loadingMessage.classList.add('hidden');
+        errorMessage.textContent = 'Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.';
+        errorMessage.classList.remove('hidden');
+        submitBtn.disabled = false;
+      }
+    });
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ba0fd2f959b6df8',t:'MTc2Nzc2MzA0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
