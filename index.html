@@ -449,6 +449,7 @@
         // Send data to Google Apps Script
         const response = await fetch('https://script.google.com/macros/s/AKfycbwkFr6EOnusDz5D-QtLJOJ1-FeOIe-Wf70vwz4KDhXa7UKA9reQ8tlYmFoN5H8Hu8HqSA/exec', {
           method: 'POST',
+         mode: 'no-cors',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
