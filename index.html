@@ -185,7 +185,7 @@
        <p class="text-xs" style="color: #6B5B4F;">Completa tus datos para confirmar tu asistencia</p>
       </div><!-- Form -->
       <form id="confirmation-form" class="space-y-4"><!-- Nombre completo -->
-       <div><label for="full_name" class="block text-xs font-semibold mb-2" style="color: #5BA3C6;"> Nombres Completos * </label> <input type="text" id="full_name" name="full_name" placeholder="Ingresa tu nombre completo" required class="w-full px-4 py-2 rounded-lg border-2 focus:outline-none transition text-sm" style="border-color: #87CEEB; color: #6B5B4F;">
+       <div><label for="fullName" class="block text-xs font-semibold mb-2" style="color: #5BA3C6;"> Nombres Completos * </label> <input type="text" id="fullName" name="fullName" placeholder="Ingresa tu nombre completo" required class="w-full px-4 py-2 rounded-lg border-2 focus:outline-none transition text-sm" style="border-color: #87CEEB; color: #6B5B4F;">
         <p class="text-xs mt-2" style="color: #FF69B4;">💡 Si asisten más personas, vuelve a llenar el formulario con cada nombre</p>
        </div><!-- Sugerencias box -->
        <div class="p-3 rounded-lg" style="background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(255, 212, 191, 0.3) 100%); border: 2px dashed #FFB6C1;">
@@ -445,27 +445,60 @@
       loadingMessage.classList.remove('hidden');
       errorMessage.classList.add('hidden');
 
-      try {
-        // Send data to Google Apps Script
-        const response = await fetch('https://script.google.com/macros/s/AKfycbwkFr6EOnusDz5D-QtLJOJ1-FeOIe-Wf70vwz4KDhXa7UKA9reQ8tlYmFoN5H8Hu8HqSA/exec', {
-          method: 'POST',
-         mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: `full_name=${encodeURIComponent(full_name)}`
-        });
-  // Show success message
-        loadingMessage.classList.add('hidden');
-        successMessage.classList.remove('hidden');
+      Edwin, revisé tu código HTML y encontré algunos errores clave que están impidiendo que el formulario funcione correctamente. Aquí te detallo los problemas y cómo solucionarlos:
 
-      } catch (error) {
-        console.error('Error:', error);
-        loadingMessage.classList.add('hidden');
-        errorMessage.textContent = 'Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.';
-        errorMessage.classList.remove('hidden');
-        submitBtn.disabled = false;
-      }
+1. Error en el fetch del Formulario
+En el código JavaScript, hay dos errores importantes en la función que envía los datos al script de Apps Script:
+Problema 1: Variable incorrecta
+javascript
+Copiar
+
+const fullName = fullNameInput.value.trim();
+
+Pero luego usas fullName en el fetch:
+javascript
+Copiar
+
+body: `fullName=${encodeURIComponent(fullName)}`
+
+Solución:
+Debes usar fullName (con mayúscula), ya que es el nombre de la variable que declaraste:
+javascript
+Copiar
+
+body: `full_name=${encodeURIComponent(fullName)}`
+
+
+Problema 2: mode: 'no-cors'
+El uso de mode: 'no-cors' impide que recibas respuestas del servidor, lo que hace que no puedas manejar errores o confirmar si los datos se enviaron correctamente.
+Solución:
+Elimina mode: 'no-cors' y asegúrate de que tu script de Apps Script maneje los encabezados CORS correctamente.
+
+2. Código Corregido para el fetch
+Reemplaza esta parte del código:
+javascript
+Copiar
+
+try {
+  const response = await fetch('https://script.google.com/macros/s/AKfycbxwy0vow3LtIeJd_coIyFPydn6QtNMHjg6KL3lKtZ-USpPVesK_R-75Ltkx6-mejSvi2g/exec', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `full_name=${encodeURIComponent(fullName)}` // Usa fullName (con mayúscula)
+  });
+  // Muestra el mensaje de éxito
+  loadingMessage.classList.add('hidden');
+  successMessage.classList.remove('hidden');
+} catch (error) {
+  console.error('Error:', error);
+  loadingMessage.classList.add('hidden');
+  errorMessage.textContent = 'Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.';
+  errorMessage.classList.remove('hidden');
+  submitBtn.disabled = false;
+}
+
+
     });
 
     if (window.elementSdk) {
